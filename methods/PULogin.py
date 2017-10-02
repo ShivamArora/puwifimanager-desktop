@@ -73,6 +73,7 @@ def logout():
         "cmd": "logout"
     }
 
+    response = None
     try:
         response = requests.get(URL, params)
     except requests.exceptions.ConnectionError:
@@ -84,11 +85,15 @@ def logout():
     print response
     # print response.text
 
-    if "Logout Successful" in response.text:
-        print "Logout successful!"
-        return True
+    if response is not None:
+        if "Logout Successful" in response.text:
+            print "Logout successful!"
+            return True
+        else:
+            print "Unable to logout!"
+            return False
     else:
-        print "Unable to logout!"
+        print "Unable to logout"
         return False
 
 

@@ -40,9 +40,11 @@ class MainWindow(QtGui.QMainWindow):
 
         context_menu = QtGui.QMenu(self)
         self.showAction = context_menu.addAction("Show")
+        self.logoutAction = context_menu.addAction("Logout")
         self.exitAction = context_menu.addAction("Exit")
 
         self.showAction.triggered.connect(self.show)
+        self.logoutAction.triggered.connect(self.logoutBtn.click)
         self.exitAction.triggered.connect(self.exit)
 
         self.systemTrayIcon.setContextMenu(context_menu)
