@@ -27,6 +27,7 @@ class UserCard (QtGui.QWidget):
         self.usernameLabel.setStyleSheet("QLabel {color:grey}")
 
     def setPassword(self,text):
+        text = u"\u2022" * len(text)
         self.passwordLabel.setText(text)
         font = QtGui.QFont('Lucida Sans', 9)
         self.usernameLabel.setFont(font)
