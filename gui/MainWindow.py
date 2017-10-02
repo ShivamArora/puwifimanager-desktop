@@ -4,6 +4,7 @@ from gui.dialogs.dialog_userinfo import UserInfoDialog
 from gui.dialogs import InfoDialog
 from gui.listitem import ListItem
 from gui.usercard import *
+from tendo import singleton
 
 minimizeToSystemTray = True
 
@@ -321,6 +322,8 @@ class MainWindow(QtGui.QMainWindow):
 
 
 if __name__ == '__main__':
+    instance = singleton.SingleInstance()
+    print instance
     app = QtGui.QApplication([])
     app.setApplicationName('PU Wifi Manager')
     window = MainWindow()
